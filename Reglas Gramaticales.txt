@@ -1,0 +1,71 @@
+Gramatica utilizada
+
+Reglas Sintácticas (Parser Rules)
+
+prog: instruccion+ EOF;
+
+instruccion
+    : asignacion
+    | imprimir
+    ;
+
+
+asignacion
+    : ID '=' expresion ';'
+    ;
+
+
+imprimir
+    : 'print' '(' expresion ')' ';'
+    ;
+
+
+expresion
+    : termino (('+' | '-' | '*' | '/') termino)*
+    ;
+
+termino
+    : NUMERO
+    | ID
+    | '(' expresion ')'
+    ;
+
+
+Reglas Lexicas (Lexer Rules / Tokens)
+
+ID
+    : [a-zA-Z]+
+    ;
+
+
+NUMERO
+    : [0-9]+
+    ;
+
+
+WS (Whitespace)
+    : [ \t\r\n]+ -> skip
+    ;
+
+Extras:
+Palabras Reservadas
+
+    'print'   -> Instrucción de impresión (no puede usarse como ID)
+    '='       -> Operador de asignación
+    '+'       -> Operador suma
+    '-'       -> Operador resta
+    '*'       -> Operador multiplicación
+    '/'       -> Operador división
+    '('  ')'  -> Agrupación de expresiones
+    ';'       -> Fin de instrucción (OBLIGATORIO)
+
+
+Restricciones Y Consideraciones
+
+  1. Toda instrucción debe terminar con punto y coma ';'.
+  2. Los identificadores solo pueden contener letras (sin números ni caracteres especiales).
+  3. Los números son solo enteros positivos (sin decimales ni negativos en el código fuente).
+  4. Las variables deben ser asignadas antes de usarse en una expresión (restricción semántica del intérprete).
+  5. La división entre cero no está contemplada por la gramática.
+
+ 
