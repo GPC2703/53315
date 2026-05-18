@@ -30,5 +30,12 @@ Podemos iniciar el analizador con Node.js ejecutando lo siguiente en la consola:
   cd ProyectoAnalizador  
   node index.js  
 ```
+En otro caso, podriamos utilizar este tambien:
+O de manera alternativa, utilizando el script de npm:
+
+```bash
+cd 53315/ProyectoAnalizador
+npm start
+```
 
 Extra: El programa utilizara con codigo fuente el archivo llamado 'input.txt', en este podras modificar la entrada a tu gusto.
