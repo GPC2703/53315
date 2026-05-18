@@ -31,7 +31,6 @@ Podemos iniciar el analizador con Node.js ejecutando lo siguiente en la consola:
   node index.js  
 ```
 En otro caso, podriamos utilizar este tambien:
-O de manera alternativa, utilizando el script de npm:
 
 ```bash
 cd 53315/ProyectoAnalizador
